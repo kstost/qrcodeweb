@@ -1,14 +1,6 @@
 "use strict";
 
 (() => {
-  type AppState =
-    | { state: 'IDLE' }
-    | { state: 'INITIALIZING' }
-    | { state: 'SCANNING' }
-    | { state: 'FOUND'; result: string }
-    | { state: 'ERROR'; error: { title: string; description: string } }
-    | { state: 'UNSUPPORTED' };
-
   // From types.ts
   const ScannerState = {
     IDLE: 'IDLE',
