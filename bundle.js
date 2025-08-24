@@ -17,7 +17,7 @@
     FOUND: 'FOUND',
     ERROR: 'ERROR',
     UNSUPPORTED: 'UNSUPPORTED',
-  } as const;
+  };
 
   // From components/icons/index.tsx
   const ScanIcon = (props) => React.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24", strokeWidth: 1.5, stroke: "currentColor", ...props },
@@ -170,7 +170,7 @@
 
   // From App.tsx
   const App = () => {
-    const [appState, setAppState] = React.useState<AppState>({ state: ScannerState.IDLE });
+    const [appState, setAppState] = React.useState({ state: ScannerState.IDLE });
     const [cameras, setCameras] = React.useState([]);
     const [activeCameraIndex, setActiveCameraIndex] = React.useState(0);
     const [torchSupported, setTorchSupported] = React.useState(false);
@@ -202,7 +202,7 @@
       setAppState({ state: ScannerState.ERROR, error: { title, description } });
     };
 
-    const startScan = React.useCallback(async (deviceId?: string) => {
+    const startScan = React.useCallback(async (deviceId) => {
       stopScan();
       setAppState({ state: ScannerState.INITIALIZING });
 
@@ -342,7 +342,7 @@
     throw new Error("Could not find root element to mount to");
   }
 
-  const root = (ReactDOM as any).createRoot(rootElement);
+  const root = (ReactDOM).createRoot(rootElement);
   root.render(
     React.createElement(React.StrictMode, null, React.createElement(App))
   );
