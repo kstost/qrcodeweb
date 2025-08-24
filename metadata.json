@@ -1,0 +1,7 @@
+{
+  "name": "QR Code Scanner",
+  "description": "A simple and fast QR code scanner web application built with React and TypeScript that allows you to scan and interpret QR codes using your device's camera.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
